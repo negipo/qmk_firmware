@@ -37,6 +37,12 @@ enum custom_keycodes {
 
 enum macro_keycodes {
   KC_SAMPLEMACRO,
+  KC_CMD_TAB,
+  KC_CTL_TAB,
+  KC_SHIFT_LEFT,
+  KC_SHIFT_RIGHT,
+  KC_SHIFT_UP,
+  KC_SHIFT_DOWN,
 };
 
 #define KC______ KC_TRNS
@@ -56,6 +62,12 @@ enum macro_keycodes {
 #define KC_CTLTB CTL_T(KC_TAB)
 #define KC_GUIEI GUI_T(KC_LANG2)
 #define KC_ALTKN ALT_T(KC_LANG1)
+#define CMD_TAB     M(KC_CMD_TAB)               // Macro for Cmd-Tab
+#define CTL_TAB     M(KC_CTL_TAB)               // Macro for Ctl-Tab
+#define SHIFT_LEFT     M(KC_SHIFT_LEFT)
+#define SHIFT_RIGHT    M(KC_SHIFT_RIGHT)
+#define SHIFT_UP       M(KC_SHIFT_UP)
+#define SHIFT_DOWN     M(KC_SHIFT_DOWN)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_kc( \
@@ -86,7 +98,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
         ESC,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  LPRN,  RPRN,  BSPC,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      CTLTB, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                   MINS,   EQL,  LCBR,  RCBR,  PIPE,   GRV,\
+      CTLTB, XXXXX, XXXXX, XXXXX,CMD_TAB,CTL_TAB,                   MINS,   EQL,  LCBR,  RCBR,  PIPE,   GRV,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                   UNDS,  PLUS,  LBRC,  RBRC,  BSLS,  TILD,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
@@ -245,4 +257,44 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
   }
   return true;
+}
+
+/*
+ * Macro definition
+ */
+const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
+{
+    if (!eeconfig_is_enabled()) {
+      eeconfig_init();
+    }
+
+    bool use_cmd = true;    // Use, for example, Cmd-Tab, Cmd-C, Cmd-V, etc.
+    // Compare to MAGIC_SWAP_ALT_GUI and MAGIC_UNSWAP_ALT_GUI configs, set in:
+    // quantum/quantum.c
+    if(keymap_config.swap_lalt_lgui == 1 && keymap_config.swap_ralt_rgui == 1) {
+      use_cmd = false;      // ... or, Alt-Tab, Ctrl-C, Ctrl-V, etc.
+    }
+
+    switch (id) {
+      case KC_CMD_TAB:
+        if(use_cmd) { return (record->event.pressed ? MACRO( D(LGUI),  D(TAB), END ) : MACRO( U(TAB), END )); }
+        else        { return (record->event.pressed ? MACRO( D(LALT),  D(TAB), END ) : MACRO( U(TAB), END )); }
+
+      case KC_CTL_TAB:
+        return (record->event.pressed ? MACRO( D(LCTRL), D(TAB), END ) : MACRO( U(TAB), END ));
+      //
+      // case KC_SHIFT_LEFT:
+      //   return (record->event.pressed ? MACRO( D(LSHIFT), D(LEFT), END ) : MACRO( U(LEFT), END ));
+      //
+      // case KC_SHIFT_RIGHT:
+      //   return (record->event.pressed ? MACRO( D(LSHIFT), D(RIGHT), END ) : MACRO( U(RIGHT), END ))
+      //
+      // case KC_SHIFT_UP:
+      //   return (record->event.pressed ? MACRO( D(LSHIFT), D(UP), END ) : MACRO( U(UP), END ))
+      //
+      // case KC_SHIFT_DOWN:
+      //   return (record->event.pressed ? MACRO( D(LSHIFT), D(DOWN), END ) : MACRO( U(DOWN), END ));
+    }
+
+    return MACRO_NONE;
 }
