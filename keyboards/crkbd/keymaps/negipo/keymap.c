@@ -62,6 +62,8 @@ enum macro_keycodes {
 #define KC_CTLTB CTL_T(KC_TAB)
 #define KC_GUIEI GUI_T(KC_LANG2)
 #define KC_ALTKN ALT_T(KC_LANG1)
+#define KC_LOWERSPC LT(3, KC_SPC)
+#define KC_RAISEENT LT(4, KC_ENT)
 #define CMD_TAB     M(KC_CMD_TAB)               // Macro for Cmd-Tab
 #define CTL_TAB     M(KC_CTL_TAB)               // Macro for Ctl-Tab
 #define SHIFT_LEFT     M(KC_SHIFT_LEFT)
