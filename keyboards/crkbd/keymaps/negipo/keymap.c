@@ -64,12 +64,8 @@ enum macro_keycodes {
 #define KC_ALTKN ALT_T(KC_LANG1)
 #define KC_LOWERSPC LT(3, KC_SPC)
 #define KC_RAISEENT LT(4, KC_ENT)
-#define CMD_TAB     M(KC_CMD_TAB)               // Macro for Cmd-Tab
-#define CTL_TAB     M(KC_CTL_TAB)               // Macro for Ctl-Tab
-#define SHIFT_LEFT     M(KC_SHIFT_LEFT)
-#define SHIFT_RIGHT    M(KC_SHIFT_RIGHT)
-#define SHIFT_UP       M(KC_SHIFT_UP)
-#define SHIFT_DOWN     M(KC_SHIFT_DOWN)
+#define KC_C_TAB     LCTL(KC_TAB)
+#define KC_G_TAB     LCMD(KC_TAB)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_kc( \
@@ -88,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
         ESC,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  LPRN,  RPRN,  BSPC,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       RCTL,  LGUI, XXXXX, XXXXX,   TAB, XXXXX,                   MINS,   EQL,  LCBR,  RCBR,  PIPE,   GRV,\
+       RCTL,  LGUI, XXXXX, XXXXX, G_TAB, C_TAB,                   MINS,   EQL,  LCBR,  RCBR,  PIPE,   GRV,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                   UNDS,  PLUS,  LBRC,  RBRC,  BSLS,  TILD,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
