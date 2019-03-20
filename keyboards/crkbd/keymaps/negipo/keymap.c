@@ -68,6 +68,9 @@ enum macro_keycodes {
 #define KC_G_TAB     LCMD(KC_TAB)
 #define KC_TLEFT LGUI(KC_LEFT_CURLY_BRACE)
 #define KC_TRIGHT LGUI(KC_RIGHT_CURLY_BRACE)
+#define KC_T1 LGUI(KC_1)
+#define KC_T2 LGUI(KC_2)
+#define KC_T3 LGUI(KC_3)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_kc( \
@@ -88,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LCTL,  LGUI, XXXXX, XXXXX, G_TAB, C_TAB,                   MINS,   EQL,  LCBR,  RCBR,  PIPE,   GRV,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT, XXXXX, XXXXX, XXXXX, TLEFT,TRIGHT,                   UNDS,  PLUS,  LBRC,  RBRC,  BSLS,  TILD,\
+       LSFT,   T1,     T2,    T3, TLEFT,TRIGHT,                   UNDS,  PLUS,  LBRC,  RBRC,  BSLS,  TILD,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                   LGUI, LOWER,   SPC,      ENT, RAISE, RGUI \
                               //`--------------------'  `--------------------'
