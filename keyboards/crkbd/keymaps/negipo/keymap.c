@@ -67,6 +67,7 @@ enum macro_keycodes {
 #define KC_T3 LGUI(KC_3)
 #define KC_LOWEI LT(3, KC_LANG2)
 #define KC_RAIKA LT(4, KC_LANG1)
+#define KC_SFTMI RSFT_T(KC_MINUS)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_kc( \
@@ -75,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       CTLTB,     A,     S,     D,     F,     G,                      H,     J,     K,     L,  SCLN,  QUOT,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT,     Z,     X,     C,     V,     B,                      N,     M,  COMM,   DOT,  SLSH,  RSFT,\
+       LSFT,     Z,     X,     C,     V,     B,                      N,     M,  COMM,   DOT,  SLSH, SFTMI,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                   LGUI, LOWEI,   SPC,      ENT, RAIKA, RALT \
                               //`--------------------'  `--------------------'
