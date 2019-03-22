@@ -18,10 +18,10 @@ RGBLIGHT_ENABLE = no       # Enable WS2812 RGB underlight.
 SWAP_HANDS_ENABLE = no      # Enable one-hand typing
 # AUTO_SHIFT_ENABLE = yes
 
-AUTO_SHIFT_ENABLE = yes
-AUTO_SHIFT_TIMEOUT = 175
-NO_AUTO_SHIFT_SPECIAL = yes
-NO_AUTO_SHIFT_NUMERIC = yes
+# AUTO_SHIFT_ENABLE = yes
+# AUTO_SHIFT_TIMEOUT = 175
+# NO_AUTO_SHIFT_SPECIAL = yes
+# NO_AUTO_SHIFT_NUMERIC = yes
 
 # Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
 SLEEP_LED_ENABLE = no    # Breathing sleep LED during USB suspend
