@@ -69,8 +69,10 @@ enum macro_keycodes {
 #define KC_RAIKA LT(4, KC_LANG1)
 #define KC_SFTMI RSFT_T(KC_MINUS)
 #define KC_G_BS LCMD(KC_BSLS)
-#define KC_GADOWN LCMD(LALT(KC_DOWN))
-#define KC_GAUP LCMD(LALT(KC_UP))
+#define KC_ADOWN LALT(KC_DOWN)
+#define KC_AUP LALT(KC_UP)
+#define KC_GADOWN LCMD(KC_ADOWN)
+#define KC_GAUP LCMD(KC_AUP)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_kc( \
@@ -103,7 +105,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       LCTL,    F1,    F2,    F3,    F4,    F5,                   LEFT,   DOWN,    UP, RIGHT, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT,   F11,   F12,   F13,   F14,   F15,                    F16,GADOWN,  GAUP,   F19,   F20, XXXXX,\
+       LSFT,   F11,   F12,   F13,   F14,   F15,                  ADOWN,   AUP,GADOWN,  GAUP,   F20, XXXXX,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                   LGUI, LOWER,   SPC,      ENT, RAISE, RALT \
                               //`--------------------'  `--------------------'
