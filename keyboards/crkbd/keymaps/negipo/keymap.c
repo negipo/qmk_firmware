@@ -73,6 +73,20 @@ enum macro_keycodes {
 #define KC_AUP LALT(KC_UP)
 #define KC_GADOWN LCMD(KC_ADOWN)
 #define KC_GAUP LCMD(KC_AUP)
+#define KC_TAP_GA TD(TD_GA)
+#define KC_TAP_AG TD(TD_AG)
+#define KC_G_A LCMD(KC_LALT)
+
+enum {
+  TD_GA = 0,
+  TD_AG = 1,
+};
+
+qk_tap_dance_action_t tap_dance_actions[] = {
+  [TD_GA] = ACTION_TAP_DANCE_DOUBLE(KC_LCMD, KC_G_A),
+  [TD_AG] = ACTION_TAP_DANCE_DOUBLE(KC_RALT, KC_G_A)
+};
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_kc( \
@@ -83,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT,     Z,     X,     C,     V,     B,                      N,     M,  COMM,   DOT,  SLSH, SFTMI,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  LGUI, LOWEI,   SPC,      ENT, RAIKA, RALT \
+                                 TAP_GA, LOWEI,   SPC,      ENT, RAIKA,TAP_AG \
                               //`--------------------'  `--------------------'
   ),
 
@@ -95,7 +109,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT, XXXXX, XXXXX, XXXXX, XXXXX,  G_BS,                   UNDS,  PLUS,  LBRC,  RBRC,  BSLS,  TILD,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  LGUI, LOWER,   SPC,      ENT, RAISE, RALT \
+                                 TAP_GA, LOWER,   SPC,      ENT, RAISE,TAP_AG\
                               //`--------------------'  `--------------------'
   ),
 
@@ -107,7 +121,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT, ADOWN,GADOWN,  LEFT,  DOWN, RIGHT,                      0,     1,     2,     3,  COMM,   DOT,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  LGUI, LOWER,   SPC,      ENT, RAISE, RALT \
+                                 TAP_GA, LOWER,   SPC,      ENT, RAISE,TAP_AG\
                               //`--------------------'  `--------------------'
   ),
 
@@ -119,7 +133,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LMOD,  LHUD,  LSAD,  LVAD, XXXXX, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  LGUI, LOWER,   SPC,      ENT, RAISE, RALT \
+                                 TAP_GA, LOWER,   SPC,      ENT, RAISE,TAP_AG\
                               //`--------------------'  `--------------------'
   )
 };
