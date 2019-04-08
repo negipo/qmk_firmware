@@ -117,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
         ESC,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0,  BSPC,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      LCTL,    AUP,  GAUP, XXXXX,    UP, XXXXX,                  XXXXX,     4,     5,     6, XXXXX, XXXXX,\
+      LCTL,    AUP,  GAUP,  PGUP,    UP,PGDOWN,                  XXXXX,     4,     5,     6, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT, ADOWN,GADOWN,  LEFT,  DOWN, RIGHT,                      0,     1,     2,     3,  COMM,   DOT,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
@@ -131,7 +131,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LTOG,  LHUI,  LSAI,  LVAI, XXXXX, XXXXX,                  _MUTE, _VOLDOWN, _VOLUP, XXXXX, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LMOD,  LHUD,  LSAD,  LVAD, XXXXX, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
+       LMOD,  LHUD,  LSAD,  LVAD, XXXXX, XXXXX,                  CAPS,   RST, XXXXX, XXXXX, XXXXX, XXXXX,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                  TAP_GA, LOWER,   SPC,      ENT, RAISE,TAP_AG\
                               //`--------------------'  `--------------------'
