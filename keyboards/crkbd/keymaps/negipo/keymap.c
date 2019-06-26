@@ -32,7 +32,8 @@ enum custom_keycodes {
   RAISE,
   ADJUST,
   BACKLIT,
-  RGBRST
+  RGBRST,
+  KAKKO
 };
 
 enum macro_keycodes {
@@ -41,6 +42,7 @@ enum macro_keycodes {
 
 #define KC______ KC_TRNS
 #define KC_XXXXX KC_NO
+#define KC_KAKKO KAKKO
 #define KC_LOWER LOWER
 #define KC_RAISE RAISE
 #define KC_RST   RESET
@@ -68,6 +70,7 @@ enum macro_keycodes {
 #define KC_LOWEI LT(3, KC_LANG2)
 #define KC_RAIKA LT(4, KC_LANG1)
 #define KC_SFTMI RSFT_T(KC_MINUS)
+#define KC_SFTK LSFT_T(KC_KAKKO)
 #define KC_G_BS LCMD(KC_BSLS)
 #define KC_ADOWN LALT(KC_DOWN)
 #define KC_AUP LALT(KC_UP)
@@ -95,7 +98,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       CTLTB,     A,     S,     D,     F,     G,                      H,     J,     K,     L,  SCLN,  QUOT,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT,     Z,     X,     C,     V,     B,                      N,     M,  COMM,   DOT,  SLSH, SFTMI,\
+       SFTK,     Z,     X,     C,     V,     B,                      N,     M,  COMM,   DOT,  SLSH, SFTMI,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                  TAP_GA, LOWEI,   SPC,      ENT, RAIKA,TAP_AG \
                               //`--------------------'  `--------------------'
@@ -117,7 +120,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
         ESC,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0,  BSPC,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      LCTL,    AUP,  GAUP,  PGUP,    UP,PGDOWN,                  XXXXX,     4,     5,     6, XXXXX, XXXXX,\
+      LCTL,    AUP,  GAUP,  PGUP,    UP,PGDOWN,                  KAKKO,     4,     5,     6, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT, ADOWN,GADOWN,  LEFT,  DOWN, RIGHT,                      0,     1,     2,     3,  COMM,   DOT,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
@@ -273,6 +276,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           RGB_current_mode = rgblight_config.mode;
         }
       #endif
+      break;
+    case KAKKO:
+      if (record->event.pressed) {
+        SEND_STRING("[]" SS_TAP(X_LEFT));
+      }
       break;
   }
   return true;
