@@ -80,6 +80,12 @@ enum macro_keycodes {
 #define KC_TAP_AG TD(TD_AG)
 #define KC_G_A LCMD(KC_LALT)
 
+#define KC_L1S LT(3,KC_SPC)
+#define KC_L1E LT(3,KC_ENT)
+#define KC_L2L LT(4,KC_LBRC)
+
+
+
 enum {
   TD_GA = 0,
   TD_AG = 1,
@@ -100,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        SFTE,     Z,     X,     C,     V,     B,                      N,     M,  COMM,   DOT,  SLSH, SFTMI,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                 RALT, RGUI,LT(1,SPC),LT(1,ENT),LT(2,LBRC),RBRC\
+                                   RALT,  LGUI,   L1S,      L1E,   L2L,  RBRC\
                               //`--------------------'  `--------------------'
   ),
 
@@ -112,11 +118,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT, XXXXX, XXXXX, XXXXX, XXXXX,  G_BS,                   UNDS,  PLUS,  COMM,   DOT,  BSLS,  TILD,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                 RALT, RGUI,LT(1,SPC),LT(1,ENT),LT(2,LBRC),RBRC\
+                                   RALT,  RGUI,   L1S,      L1E,   L2L,  RBRC\
                               //`--------------------'  `--------------------'
   ),
-
-  //        LCTL,    T1, TLEFT,TRIGHT, G_TAB, C_TAB,                   MINS,   EQL,  LCBR,  RCBR,  PIPE,   GRV,\
 
   [_RAISE] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
@@ -126,7 +130,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT, ADOWN,GADOWN,  LEFT,  DOWN, RIGHT,                      0,     1,     2,     3,  COMM,   DOT,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                 RALT, RGUI,LT(1,SPC),LT(1,ENT),LT(2,LBRC),RBRC\
+                                   RALT,  RGUI,   L1S,      L1E,   L2L,  RBRC\
                               //`--------------------'  `--------------------'
   ),
 
