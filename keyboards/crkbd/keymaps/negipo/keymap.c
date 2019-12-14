@@ -70,7 +70,7 @@ enum macro_keycodes {
 #define KC_LOWEI LT(3, KC_LANG2)
 #define KC_RAIKA LT(4, KC_LANG1)
 #define KC_SFTMI RSFT_T(KC_MINUS)
-#define KC_SFTK LSFT_T(KC_KAKKO)
+#define KC_SFTE LSFT_T(KC_EQUAL)
 #define KC_G_BS LCMD(KC_BSLS)
 #define KC_ADOWN LALT(KC_DOWN)
 #define KC_AUP LALT(KC_UP)
@@ -98,33 +98,35 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       CTLTB,     A,     S,     D,     F,     G,                      H,     J,     K,     L,  SCLN,  QUOT,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       SFTK,     Z,     X,     C,     V,     B,                      N,     M,  COMM,   DOT,  SLSH, SFTMI,\
+       SFTE,     Z,     X,     C,     V,     B,                      N,     M,  COMM,   DOT,  SLSH, SFTMI,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                 TAP_GA, LOWEI,   SPC,      ENT, RAIKA,TAP_AG \
+                                 RALT, RGUI,LT(1,SPC),LT(1,ENT),LT(2,LBRC),RBRC\
                               //`--------------------'  `--------------------'
   ),
 
   [_LOWER] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-        ESC,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  LPRN,  RPRN,  BSPC,\
+        ESC,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0,  BSPC,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LCTL,    T1, TLEFT,TRIGHT, G_TAB, C_TAB,                   MINS,   EQL,  LCBR,  RCBR,  PIPE,   GRV,\
+      C_TAB,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  LPRN,  RPRN,  BSPC,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT, XXXXX, XXXXX, XXXXX, XXXXX,  G_BS,                   UNDS,  PLUS,  LBRC,  RBRC,  BSLS,  TILD,\
+       LSFT, XXXXX, XXXXX, XXXXX, XXXXX,  G_BS,                   UNDS,  PLUS,  COMM,   DOT,  BSLS,  TILD,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                 TAP_GA, LOWER,   SPC,      ENT, RAISE,TAP_AG\
+                                 RALT, RGUI,LT(1,SPC),LT(1,ENT),LT(2,LBRC),RBRC\
                               //`--------------------'  `--------------------'
   ),
 
+  //        LCTL,    T1, TLEFT,TRIGHT, G_TAB, C_TAB,                   MINS,   EQL,  LCBR,  RCBR,  PIPE,   GRV,\
+
   [_RAISE] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-        ESC,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0,  BSPC,\
+        ESC,    F1,    F2,    F3,    F4,    F5,                     F6,    F7,    F8,_VOLUP,_VOLDOWN,BSPC,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      LCTL,    AUP,  GAUP,  PGUP,    UP,PGDOWN,                  KAKKO,     4,     5,     6, XXXXX, XXXXX,\
+      C_TAB,    AUP,  GAUP,  PGUP,    UP,PGDOWN,                  KAKKO,     4,     5,     6, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT, ADOWN,GADOWN,  LEFT,  DOWN, RIGHT,                      0,     1,     2,     3,  COMM,   DOT,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                 TAP_GA, LOWER,   SPC,      ENT, RAISE,TAP_AG\
+                                 RALT, RGUI,LT(1,SPC),LT(1,ENT),LT(2,LBRC),RBRC\
                               //`--------------------'  `--------------------'
   ),
 
