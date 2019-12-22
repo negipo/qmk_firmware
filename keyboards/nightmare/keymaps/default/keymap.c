@@ -32,13 +32,13 @@
 #define KC_S0 LSFT(KC_0)
 #define KC_SMINUS LSFT(KC_MINUS)
 #define KC_SEQUAL LSFT(KC_EQUAL)
-
+#define KC_SFTBSL RSFT_T(KC_BSLASH)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_split(/* Base */
                  KC_ESC, KC_ESC, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSPC,
                  KC__VOLUP, KC_CTLTB, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOTE, KC_ENTER,
-                 KC__VOLDOWN, KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMMA, KC_DOT, KC_SLSH, KC_SFTMI, LT(2, KC_EQUAL),
+                 KC__VOLDOWN, KC_SFTBSL, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMMA, KC_DOT, KC_SLSH, KC_SFTMI, LT(2, KC_EQUAL),
                  KC__MUTE, KC_LGUI, KC_LALT, KC_LGUI, LT(1, KC_SPACE), LT(1, KC_RGUI), KC_RALT, KC_BSLASH, LT(1, KC_GRAVE)),
 
     [1] = LAYOUT_split(
