@@ -126,9 +126,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
         ESC,    F1,    F2,    F3,    F4,    F5,                     F6,    F7,    F8,_VOLUP,_VOLDOWN,BSPC,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      C_TAB,    AUP,  GAUP,  PGUP,    UP,PGDOWN,                  KAKKO,     4,     5,     6, XXXXX, XXXXX,\
+      C_TAB,    AUP,  GAUP,  PGUP,    UP,PGDOWN,                 KAKKO,     4,     5,     6, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT, ADOWN,GADOWN,  LEFT,  DOWN, RIGHT,                      0,     1,     2,     3,  COMM,   DOT,\
+       LSFT, ADOWN,GADOWN,  LEFT,  DOWN, RIGHT,                      0,     1,  COMM,   DOT,  SLSH, SFTMI,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                    RALT,  RGUI,   L1S,      L1E,   L2L,  RBRC\
                               //`--------------------'  `--------------------'
